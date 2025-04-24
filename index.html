@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WiOS Site</title>
+</head>
+<body>
+  <h1 class="loading">
+    WiOS
+  </h1>
+  <br>
+  <br>
+  <h3 class="loading1">
+    Carregando...
+  </h3>
+  <input class="buton" type="button" value="Iniciar" onclick="mudarTexto(this); window.location.href='paginainicial.html'" style="display: none;">
+  <script>
+    // Pega o elemento com a classe "loading1"
+let carregando = document.querySelector(".loading1");
+let botoes = document.querySelector(".buton")
+
+// Muda o texto dele
+setTimeout(() => {
+  carregando.innerText = "Iniciando WiOS...";
+}, 2000); // muda depois de 2 segundos 
+setTimeout(() => {
+  carregando.innerText = "Quase lá...";
+}, 4000);
+setTimeout(() => {
+  carregando.innerText = "Pronto!";
+}, 8000);
+setTimeout(() => {
+  carregando.innerText = "Aperte aqui para iniciar.";
+}, 10000);
+function mudarTexto(botao) {
+  botao.value = "Movendo para a página inicial..."
+  setTimeout(function() {
+    botao.value = "Iniciar";
+  }, 3000);
+}
+setTimeout(() => {
+  botoes.style.display = "block";
+  botoes.classList.add("fade-in");
+}, 10000);
+  </script>
+</body>
+<style>
+.loading {
+   text-align: center;
+   margin-top: 175px;
+}
+.loading1 {
+  text-align: center;
+  margin-top: 125px;
+}
+  body {
+    font-family: Sans-Serif;
+    color: white;
+    background-color: rgb(55, 55, 55);
+  }
+  .buton {
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid rgb(100,0,0);
+    font-size: 17.5px;
+    min-width: 1.75cm;
+    color: white;
+    background-color: rgb(200,0,0);
+    margin-top: 50px;
+  }
+  .fade-in {
+  animation: fadeIn 750ms ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+</style>
+</html>
